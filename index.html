@@ -1,30 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="A tactile, iridescent CD. Drag to explore every angle.">
-  <title>Iridescent CD</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="importmap">{"imports":{"three":"./three.module.js","three/addons/controls/OrbitControls.js":"./OrbitControls.js"}}</script>
-</head>
-<body>
-  <main id="viewer" aria-label="Interactive three-dimensional compact disc">
-    <div class="signature" aria-hidden="true"><span class="spark">✳</span> optical object <span class="edition">001</span></div>
-    <canvas id="scene" tabindex="0" aria-label="CD viewer. Drag to rotate. Arrow keys rotate; space pauses."></canvas>
-    <div id="status" role="status">Developing reflections…</div>
-    <footer>
-      <span class="hint">Drag to rotate <span>·</span> Scroll to zoom</span>
-      <div class="controls">
-        <button id="motion" aria-label="Pause automatic rotation" aria-pressed="false">Ⅱ</button>
-        <button id="flip" aria-label="Flip disc to opposite side">↔</button>
-        <button id="reset" aria-label="Reset disc view">↺</button>
-      </div>
-      <span class="label">360° / holographic</span>
-    </footer>
-  </main>
-  <script type="module" src="main.js"></script>
-</body>
-</html>
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff">
+<meta name="description" content="Pick a disc. Explore its reflections. Find your next soundtrack."><title>Optical — Listening room</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23749c9d'/%3E%3Ccircle cx='20' cy='20' r='5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./three.module.js","three/addons/controls/OrbitControls.js":"./OrbitControls.js"}}</script>
+</head><body>
+<header><a class="signature" href="./" aria-label="Optical home"><span class="spark">✳</span> optical <span class="divider">/</span><span>listening room</span></a><span class="edition">VOL. 01 — TWO DISCS</span></header>
+<main id="app">
+<section class="collection-heading"><p class="eyebrow">A small collection of good escapes</p><h1>Choose your frequency.</h1><p class="subtle" id="selection-hint">Pick a disc to start listening.</p></section>
+<div class="experience">
+<section id="viewer" aria-label="Interactive CD collection">
+<canvas id="scene" tabindex="0" aria-label="CD collection. Select a disc below, then drag or use arrow keys to rotate. Space pauses rotation."></canvas>
+<div id="status" role="status">Developing reflections…</div>
+<div class="view-tools" hidden><span class="hint">Drag to rotate · Scroll to zoom</span><div class="controls"><button id="motion" aria-label="Pause automatic rotation" aria-pressed="false">Ⅱ</button><button id="flip" aria-label="Flip disc to opposite side">↔</button><button id="reset" aria-label="Reset disc view">↺</button></div></div>
+</section>
+<aside id="playlist-panel" aria-labelledby="disc-title" hidden>
+<div class="panel-top"><span class="eyebrow" id="disc-number">DISC 01</span><button id="close-player" aria-label="Return to collection">×</button></div>
+<h2 id="disc-title">Alpine air</h2><p class="subtle" id="disc-description">A little room to breathe.</p>
+<div id="spotify-shell"><div id="spotify-player"></div></div>
+<div class="transport" id="transport" hidden><button id="play" disabled aria-label="Play playlist">▶ <span>Play</span></button><button id="restart" disabled aria-label="Restart current track">↺</button></div>
+<div class="playlist-meta"><span>Shared test playlist</span><a id="spotify-link" href="https://open.spotify.com/playlist/7vFQNWXoblEJXpbnTuyz76" target="_blank" rel="noopener noreferrer">Open Spotify ↗</a></div>
+<p id="playback-status" role="status" class="subtle"></p>
+</aside></div>
+<nav class="disc-shelf" aria-label="Choose a CD">
+<button class="disc-choice" data-disc="0" aria-pressed="false"><span class="mini-disc alpine"></span><span class="disc-copy"><span class="eyebrow">01 / ALPINE</span><strong>Alpine air</strong></span><span class="select-arrow">↗</span></button>
+<button class="disc-choice" data-disc="1" aria-pressed="false"><span class="mini-disc ocean"></span><span class="disc-copy"><span class="eyebrow">02 / OCEAN</span><strong>Blue hours</strong></span><span class="select-arrow">↗</span></button>
+</nav></main>
+<footer><span>Made for a slower moment.</span><span>Artwork via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash ↗</a></span></footer>
+<script type="module" src="main.js"></script>
+</body></html>
