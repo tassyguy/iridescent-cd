@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A tactile, iridescent CD. Drag to explore every angle.">
+  <title>Iridescent CD</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./three.module.js","three/addons/controls/OrbitControls.js":"./OrbitControls.js"}}</script>
+</head>
+<body>
+  <main id="viewer" aria-label="Interactive three-dimensional compact disc">
+    <div class="signature" aria-hidden="true"><span class="spark">✳</span> optical object <span class="edition">001</span></div>
+    <canvas id="scene" tabindex="0" aria-label="CD viewer. Drag to rotate. Arrow keys rotate; space pauses."></canvas>
+    <div id="status" role="status">Developing reflections…</div>
+    <footer>
+      <span class="hint">Drag to rotate <span>·</span> Scroll to zoom</span>
+      <div class="controls">
+        <button id="motion" aria-label="Pause automatic rotation" aria-pressed="false">Ⅱ</button>
+        <button id="flip" aria-label="Flip disc to opposite side">↔</button>
+        <button id="reset" aria-label="Reset disc view">↺</button>
+      </div>
+      <span class="label">360° / holographic</span>
+    </footer>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
+
